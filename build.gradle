@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+ext {
+    junitVersion = '5.10.0'
+    retrofitVersion = '2.9.0'
+    allureVersion = '2.15.0'
+    jweaverVersion = '1.9.7'
+    lombokVersion = '1.18.24'
+}
+dependencies {
+    // JUnit Jupiter API and Engine
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
+
+    // Retrofit и конвертеры
+    testImplementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    testImplementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    // Lombok
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    // Allure
+    testImplementation "org.aspectj:aspectjweaver:$jweaverVersion"
+    testImplementation "io.qameta.allure:allure-java-commons:$allureVersion"
+    testImplementation "io.qameta.allure:allure-junit5:$allureVersion"
+    testImplementation "io.qameta.allure:allure-assertj:$allureVersion"
+    testImplementation "io.qameta.allure:allure-commandline:$allureVersion"
+
+
+}
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+test {
+    useJUnitPlatform()
+}
