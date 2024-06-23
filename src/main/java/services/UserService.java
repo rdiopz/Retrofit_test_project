@@ -28,5 +28,4 @@ public interface UserService {
     // Метод удаления пользователя по идентификатору
     @DELETE("api/users/{id}")
     Call<Void> deleteUserById(@Path("id") int idParameter);
-
 }

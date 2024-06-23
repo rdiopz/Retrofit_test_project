@@ -3,12 +3,11 @@ package models.get;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
-@Getter
-@Setter
-@AllArgsConstructor
+@Getter @Setter @AllArgsConstructor @ToString
 public class UserListResponse {
     private Integer page;
     private Integer per_page;
