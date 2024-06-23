@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Epic("Управление пользователями")
-@Feature("Страницы пользователей")
+@Feature("Список пользователей")
 @Story("Проверка списка пользователей")
 @Owner("AlexeyRDIO")
 public class UserListPageTest extends BaseApiTest {
